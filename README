@@ -1,0 +1,3 @@
+This simple application is meant to accept user inputs in the form field,
+display it in the DOM and save it(form input values) in a JavaScript obj
+then console log the now stored object properties

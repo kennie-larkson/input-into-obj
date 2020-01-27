@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: blanchedalmond;
+            padding: 2em;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .wrapper{
+            display: grid;
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            border: 1px solid white;
+            padding: 1em;
+            grid-row-gap: 10px;
+            justify-content: center;
+        }
+        .form{
+            /* grid-auto-rows: 3/6; */
+            border: 1px solid white;
+            width: 50%;
+        }
+        button{
+            outline: none;
+            border:none;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <form action="" method="get">
+            <div class="form">
+                <label for="uname">Enter name:</label>
+                <input type="text" name="" id="valueName">
+                <label for="ugender">Enter gender:</label>
+                <input type="text" name="" id="valueGender">
+            </div>
+        </form>
+        
+            <button>Click Me</button>
+    </div>
+    
+
+    <script>
+
+        const btn = document.querySelector('button');
+        const displayValue = ()=>{
+
+            const valueName = document.getElementById('valueName').value;
+            const valueGender = document.getElementById('valueGender').value;
+            const ele = document.createElement('p');
+            ele.style.cssText = "background-color: purple; color: white; font-size: 18px; padding: 1em;"
+            ele.textContent = ` Name: ${valueName} Gender: ${valueGender}`;
+            document.body.append(ele);
+
+            const myObj = {
+                inputName: valueName,
+                inputGender: valueGender
+            }
+            const { inputName, inputGender } = myObj;
+
+            const formatted = JSON.stringify(myObj);
+            console.log(formatted);
+
+            console.log(inputName+' '+inputGender);
+
+        }
+
+        btn.addEventListener('click', displayValue);
+        
+    </script>
+</body>
+</html>
